@@ -61,7 +61,7 @@ require_once("../db/dbconnection.php");
             <?php
                         $select ="SELECT id,prname,prcount from products";
                         $result = pg_query($conn, $select);
-                        if ( pg_num_rows($result) >0){
+                        if ( mysqli_fetch_row($result) >0){
                             while($row = pg_fetch_assoc($result)){
                                 echo "<tr><td>".$row["id"]."</td>";
                                 
